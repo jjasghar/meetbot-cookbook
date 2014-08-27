@@ -1,9 +1,9 @@
-name             'meetbot'
+name             'meetbot-cookbook'
 maintainer       'JJ Asghar'
 maintainer_email 'jj@getchef.com'
-license          ''
+license          'Apache 2.0'
 description      'Installs/Configures meetbot-cookbook'
 long_description 'Installs/Configures meetbot-cookbook'
-version          '0.1.0'
+version          '1.0.0'
 
 depends 'python'
