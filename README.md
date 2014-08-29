@@ -2,15 +2,20 @@
 
 This is the cookbook to help set up [meetbot](https://wiki.debian.org/MeetBot) quickly and repeatably.
 
-If you run the default recipe it'll build it for you, this has been tested on Ubuntu 14.04.
+If you run the default recipe it'll build it for you, this has been tested on Ubuntu 14.04 and Centos 6.5
 
 There are some options you might want to change, for example:
+
 ```ruby
 default['meetbot']['user']  = 'vagrant'
+
+default['meetbot']['logUrlPrefix'] = 'http://myawesomedomain.com/meetbot'
 ```
-This also pushes it into the directory of that `user/ircbot`.
+
+This also pushes the logs into the directory of that `$USER/ircbot/$BOTNAME/`.
 
 Also this moment you'll need to set up via something like:
+
 ```bash
 $ cd ~/ircbot
 $ source bin/activate
@@ -20,6 +25,7 @@ $ supybot-wizard
 I was thinking of automating this, but you might want more than just Meetbot after setting this up.
 
 During the wizard you'll want to do make sure you enter these options:
+
 ```bash
 Now we're going to run you through plugin configuration. There's
 a variety of plugins in supybot by default, but you can create
@@ -81,9 +87,9 @@ Done!
 
 This will make sure that you have meetbot and channellogger running.
 
+After the setup you'll have a `name_of_bot.conf` and you can start it via:
 
-After the setup you'll have a `name_of_bot.conf` and you can start it via: `supybot name_of_bot.conf`
-
+`supybot name_of_bot.conf`
 
 
 ## TODO
@@ -91,4 +97,4 @@ After the setup you'll have a `name_of_bot.conf` and you can start it via: `supy
 - Automate starting (runit?)
 - Automate/Sane defaults for `name_of_bot.conf`?
 - Add webserver and web user for `~/ircbot/name_of_bot/` so you can post your logs
-- Centos support
+

@@ -1,0 +1,8 @@
+class Config(object):
+    # These two are **required**:
+    logFileDir = '<%= node['meetbot']['directory'] %>'
+    logUrlPrefix = '<%= node['meetbot']['logUrlPrefix'] %>'
+    
+    # Thees are technically optional:
+    filenamePattern = '%(channel)s/%%Y/%(channel)s.%%F-%%H.%%M'
+    MeetBotInfoURL = '<%= node['meetbot']['MeetBotInfoURL'] %>'
